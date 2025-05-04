@@ -1,6 +1,8 @@
-# LET (Event Tracing for Linux)
+# **LET** | _Event Tracing for Linux_
+[![made-with-python](http://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![open-source](https://forthebadge.com/images/badges/open-source.svg)](https://cyberthreatdefence.com/)
 
-LET is a tracing facility that allows a user to log events to a file (JSON, XML, CSV)
+LET is a tracing facility that allows a user to log events to a file (_JSON, XML, CSV_)
 
 <details>
 
