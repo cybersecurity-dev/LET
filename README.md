@@ -1,3 +1,9 @@
+<p align="center">
+    <a href="https://docs.kernel.org/trace/events.html">
+      <img width="20%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Tux.svg" />
+    </a>
+</p>
+
 # **LET** | _Event Tracing for Linux_
 [![made-with-python](http://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![open-source](https://forthebadge.com/images/badges/open-source.svg)](https://cyberthreatdefence.com/)
