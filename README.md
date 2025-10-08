@@ -9,7 +9,14 @@
 [![open-source](https://forthebadge.com/images/badges/open-source.svg)](https://cyberthreatdefence.com/)
 
 LET is a tracing facility that allows a user to log events to a file (_JSON, XML, CSV_)
-
+<p align="center">
+    <a href="https://github.com/cybersecurity-dev/"><img height="25" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/github.svg" alt="GitHub"></a>
+    &nbsp;
+    <a href="https://www.youtube.com/@CyberThreatDefence"><img height="25" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/youtube.svg" alt="YouTube"></a>
+    &nbsp;
+    <a href="https://cyberthreatdefence.com/my_awesome_lists"><img height="20" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/blog.svg" alt="My Awesome Lists"></a>
+    <img src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/bar.gif">
+</p>
 <details>
 
 <summary>Install required tools on Linux</summary>
@@ -74,3 +81,16 @@ python3 setup.py install
 | `ABS_X`, `ABS_Y`     | Absolute pointer position                                                   | input subsystem                    |
 | `AUDIT_SYSCALL`      | System call event                                                           | auditd / kernel audit subsystem    |
 | `NETLINK_ROUTE`      | Network interface changes (e.g., link up/down)                              | netlink                            |
+
+
+##
+
+### Contributing
+
+[Contributions of any kind welcome, just follow the guidelines](contributing.md)!
+
+### Contributors
+
+[Thanks goes to these contributors](https://github.com/cybersecurity-dev/LET/graphs/contributors)!
+
+[🔼 Back to top](#let--event-tracing-for-linux)
