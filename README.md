@@ -5,8 +5,9 @@
 </p>
 
 # **LET** | _Event Tracing for Linux_
-[![made-with-python](http://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-[![open-source](https://forthebadge.com/images/badges/open-source.svg)](https://cyberthreatdefence.com/)
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)]()
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)]()
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)]()
 
 LET is a tracing facility that allows a user to log events to a file (_JSON, XML, CSV_)
 <p align="center">
