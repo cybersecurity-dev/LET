@@ -1,10 +1,14 @@
-<p align="center">
-    <a href="https://docs.kernel.org/trace/events.html">
-      <img width="20%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Tux.svg" />
-    </a>
-</p>
+<div align="center">
+    <p align="center">
+        <a align="center" href="https://docs.kernel.org/trace/events.html">
+          <img width="10%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Tux.svg" />
+        </a>
+    </p>
 
-# **LET** | _Event Tracing for Linux_
+# **`LET`** | _Event Tracing for Linux_
+
+</div>
+
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)]()
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)]()
 [![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)]()
@@ -18,6 +22,11 @@ LET is a tracing facility that allows a user to log events to a file (_JSON, XML
     <a href="https://cyberthreatdefence.com/my_awesome_lists"><img height="20" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/blog.svg" alt="My Awesome Lists"></a>
     <img src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/bar.gif">
 </p>
+
+[![Linux](https://img.shields.io/badge/Linux-Supported-brightgreen?logo=linux&logoColor=white)](https://github.com/cybersecurity-dev/LET)
+
+
+
 <details>
 
 <summary>Install required tools on Linux</summary>
