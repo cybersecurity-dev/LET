@@ -1,9 +1,39 @@
 <div align="center">
     <p align="center">
         <a align="center" href="https://docs.kernel.org/trace/events.html">
-          <img width="10%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Tux.svg" />
+          <img width="5%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Tux.svg" />
         </a>
     </p>
+
+```mermaid
+flowchart LR
+    A["Linux System<br/>Processes, Files, Network"]
+    B["Event Tracing<br/>eBPF / Tracepoints"]
+    C["Event Collector"]
+    D["Event Processing<br/>Parse and Filter"]
+    E[("Event Storage")]
+    F["Dashboard and Analysis"]
+    G["Alerts"]
+
+    A -->|Generate events| B
+    B -->|Capture events| C
+    C --> D
+    D --> E
+    E --> F
+    D -->|Suspicious activity| G
+
+    classDef system fill:#DBEAFE,stroke:#2563EB,color:#172554
+    classDef tracing fill:#EDE9FE,stroke:#7C3AED,color:#2E1065
+    classDef processing fill:#FEF3C7,stroke:#D97706,color:#451A03
+    classDef storage fill:#DCFCE7,stroke:#16A34A,color:#052E16
+    classDef output fill:#FEE2E2,stroke:#DC2626,color:#450A0A
+
+    class A system
+    class B,C tracing
+    class D processing
+    class E storage
+    class F,G output
+```
 
 # **`LET`** | _Event Tracing for Linux_
 
