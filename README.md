@@ -6,6 +6,145 @@
     </p>
 
 ```mermaid
+flowchart TB
+    subgraph Sources["Linux Event Sources"]
+        direction LR
+        APP["User-Space Applications"]
+        PROC["Processes and Threads"]
+        FILE["File-System Operations"]
+        NET["Network Activity"]
+        SYS["System Calls"]
+        KERN["Kernel Events"]
+    end
+
+    subgraph Instrumentation["Tracing and Instrumentation Layer"]
+        direction LR
+        TP["Kernel Tracepoints"]
+        KP["Kprobes / Kretprobes"]
+        UP["Uprobes / Uretprobes"]
+        PERF["Perf Events"]
+        LSM["eBPF LSM Hooks"]
+    end
+
+    subgraph Collection["Event Collection Layer"]
+        EBPF["eBPF Programs"]
+        MAPS["eBPF Maps"]
+        BUFFER["Ring Buffer / Perf Buffer"]
+        LOADER["User-Space eBPF Loader"]
+    end
+
+    subgraph Processing["Event Processing Pipeline"]
+        INGEST["Event Ingestion"]
+        PARSE["Parsing and Normalization"]
+        ENRICH["Context Enrichment<br/>PID, UID, container, namespace"]
+        FILTER["Filtering and Aggregation"]
+        CORRELATE["Event Correlation"]
+        FEATURE["Graph and Feature Construction"]
+    end
+
+    subgraph Detection["Analysis and Detection"]
+        RULES["Rule-Based Detection"]
+        ML["Machine-Learning Model"]
+        CPG["Code Property Graph Analysis"]
+        BEHAVIOR["Behavioral Analysis"]
+        ALERT["Alert Generation"]
+    end
+
+    subgraph Storage["Storage Layer"]
+        EVENTDB[("Event Database")]
+        GRAPHDB[("Graph Database")]
+        LOGS[("Raw Event Archive")]
+    end
+
+    subgraph Presentation["Management and Visualization"]
+        API["REST / gRPC API"]
+        DASH["Monitoring Dashboard"]
+        QUERY["Investigation Interface"]
+        REPORT["Reports and Exports"]
+        SIEM["SIEM Integration"]
+    end
+
+    Sources --> Instrumentation
+
+    TP --> EBPF
+    KP --> EBPF
+    UP --> EBPF
+    PERF --> EBPF
+    LSM --> EBPF
+
+    LOADER -->|Load and configure| EBPF
+    EBPF --> MAPS
+    MAPS --> BUFFER
+    BUFFER --> LOADER
+    LOADER --> INGEST
+
+    INGEST --> PARSE
+    PARSE --> ENRICH
+    ENRICH --> FILTER
+    FILTER --> CORRELATE
+    CORRELATE --> FEATURE
+
+    FEATURE --> RULES
+    FEATURE --> ML
+    FEATURE --> CPG
+    FEATURE --> BEHAVIOR
+
+    RULES --> ALERT
+    ML --> ALERT
+    CPG --> ALERT
+    BEHAVIOR --> ALERT
+
+    PARSE --> LOGS
+    ENRICH --> EVENTDB
+    FEATURE --> GRAPHDB
+
+    EVENTDB --> API
+    GRAPHDB --> API
+    LOGS --> API
+    ALERT --> API
+
+    API --> DASH
+    API --> QUERY
+    API --> REPORT
+    API --> SIEM
+
+    classDef source fill:#e8f1ff,stroke:#2563eb,color:#172554
+    classDef trace fill:#ede9fe,stroke:#7c3aed,color:#2e1065
+    classDef collect fill:#dcfce7,stroke:#16a34a,color:#052e16
+    classDef process fill:#fef3c7,stroke:#d97706,color:#451a03
+    classDef detect fill:#fee2e2,stroke:#dc2626,color:#450a0a
+    classDef storage fill:#e0f2fe,stroke:#0284c7,color:#082f49
+    classDef view fill:#f3e8ff,stroke:#9333ea,color:#3b0764
+
+    class APP,PROC,FILE,NET,SYS,KERN source
+    class TP,KP,UP,PERF,LSM trace
+    class EBPF,MAPS,BUFFER,LOADER collect
+    class INGEST,PARSE,ENRICH,FILTER,CORRELATE,FEATURE process
+    class RULES,ML,CPG,BEHAVIOR,ALERT detect
+    class EVENTDB,GRAPHDB,LOGS storage
+    class API,DASH,QUERY,REPORT,SIEM view
+```
+
+# **`LET`** | _Event Tracing for Linux_
+> LET is a tracing facility that allows a user to log events to a file (_JSON, XML, CSV_)
+</div>
+
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)]()
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)]()
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)]()
+
+<p align="center">
+    <a href="https://github.com/cybersecurity-dev/"><img height="25" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/github.svg" alt="GitHub"></a>
+    &nbsp;
+    <a href="https://www.youtube.com/@CyberThreatDefence"><img height="25" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/youtube.svg" alt="YouTube"></a>
+    &nbsp;
+    <a href="https://cyberthreatdefence.com/my_awesome_lists"><img height="20" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/blog.svg" alt="My Awesome Lists"></a>
+    <img src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/bar.gif">
+</p>
+
+[![Linux](https://img.shields.io/badge/Linux-Supported-brightgreen?logo=linux&logoColor=white)](https://github.com/cybersecurity-dev/LET)
+
+```mermaid
 flowchart LR
     A["Linux System<br/>Processes, Files, Network"]
     B["Event Tracing<br/>eBPF / Tracepoints"]
@@ -35,27 +174,13 @@ flowchart LR
     class F,G output
 ```
 
-# **`LET`** | _Event Tracing for Linux_
+## 📖 Contents
+- [Installation Steps](#installation-steps)
+- [My Awesome Lists](#my-awesome-lists)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
 
-</div>
-
-[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)]()
-[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)]()
-[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)]()
-
-LET is a tracing facility that allows a user to log events to a file (_JSON, XML, CSV_)
-<p align="center">
-    <a href="https://github.com/cybersecurity-dev/"><img height="25" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/github.svg" alt="GitHub"></a>
-    &nbsp;
-    <a href="https://www.youtube.com/@CyberThreatDefence"><img height="25" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/youtube.svg" alt="YouTube"></a>
-    &nbsp;
-    <a href="https://cyberthreatdefence.com/my_awesome_lists"><img height="20" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/blog.svg" alt="My Awesome Lists"></a>
-    <img src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/bar.gif">
-</p>
-
-[![Linux](https://img.shields.io/badge/Linux-Supported-brightgreen?logo=linux&logoColor=white)](https://github.com/cybersecurity-dev/LET)
-
-
+## Installation Steps
 
 <details>
 
